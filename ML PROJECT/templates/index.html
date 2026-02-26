@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Classification - Predict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="/" class="back-link">← Back to Home</a>
+
+    <h1>Fitness Classification</h1>
+    <p class="subtitle">Enter the details below to predict if a person is Fit or Not Fit.</p>
+
+    <form method="POST" action="{{ url_for('predict') }}">
+        <div class="grid">
+
+            <div class="form-group">
+                <label>🧍 Age</label>
+                <input type="number" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label>📏 Height (cm)</label>
+                <input type="number" name="height_cm" required>
+            </div>
+
+            <div class="form-group">
+                <label>⚖️ Weight (kg)</label>
+                <input type="number" name="weight_kg" required>
+            </div>
+
+            <div class="form-group">
+                <label>❤️ Heart Rate</label>
+                <input type="number" name="heart_rate" required>
+            </div>
+
+            <div class="form-group">
+                <label>🩺 Blood Pressure</label>
+                <input type="number" name="blood_pressure" required>
+            </div>
+
+            <div class="form-group">
+                <label>😴 Sleep Hours</label>
+                <input type="number" name="sleep_hours" required>
+            </div>
+
+            <div class="form-group">
+                <label>🥗 Nutrition Quality (0–10)</label>
+                <input type="number" name="nutrition_quality" required>
+            </div>
+
+            <div class="form-group">
+                <label>🏃 Activity Index (1–5)</label>
+                <input type="number" name="activity_index" required>
+            </div>
+
+            <div class="form-group">
+                <label>🚻 Gender</label>
+                <select name="gender" required>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>🚬 Smokes</label>
+                <select name="smokes" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="center">
+            <button type="submit" class="btn">Predict Fitness</button>
+        </div>
+    </form>
+
+    {% if error_text %}
+    <div class="result error">
+        <span class="result-icon">⚠️</span>
+        <span class="result-text">{{ error_text }}</span>
+    </div>
+    {% endif %}
+
+    {% if prediction_text %}
+    <div class="result {% if prediction_status == 'fit' %}fit{% else %}not-fit{% endif %}">
+        <span class="result-icon">
+            {% if prediction_status == 'fit' %} ✅ {% else %} ⚠️ {% endif %}
+        </span>
+        <span class="result-text">{{ prediction_text }}</span>
+    </div>
+    {% endif %}
+
+    <div class="site-footer">
+        © 2025 Fitness Classification ML System
+    </div>
+
+</div>
+
+</body>
+</html>

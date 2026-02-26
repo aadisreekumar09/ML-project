@@ -1,0 +1,308 @@
+/* base */
+:root{
+  --bg: #f3f5f9;
+  --card: #ffffff;
+  --accent: #4b7bec;
+  --accent-dark: #3867d6;
+  --muted: #6b7280;
+  --success: #1e7a4c;
+  --danger: #c0392b;
+}
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color:#111827;
+}
+
+/* container card */
+.container{
+  max-width:1000px;
+  margin:60px auto;
+  background:var(--card);
+  border-radius:12px;
+  padding:36px;
+  box-shadow:0 12px 30px rgba(12,20,40,0.08);
+}
+
+/* back link */
+.back-link{
+  display:inline-block;
+  margin-bottom:12px;
+  color:var(--muted);
+  text-decoration:none;
+}
+.back-link:hover{ color:#333; }
+
+/* headline */
+h1{
+  text-align:center;
+  margin:6px 0 6px;
+  font-size:34px;
+}
+.subtitle{
+  text-align:center;
+  color:var(--muted);
+  margin-bottom:26px;
+}
+
+/* grid form */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:18px 24px;
+}
+
+/* responsive */
+@media (max-width:880px){
+  .grid{ grid-template-columns:repeat(2, 1fr); }
+}
+@media (max-width:560px){
+  .grid{ grid-template-columns:1fr; }
+}
+
+/* form group */
+.form-group{ display:flex; flex-direction:column; }
+.form-group label{
+  font-weight:600; margin-bottom:8px; font-size:14px;
+}
+.form-group input,
+.form-group select{
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid #e5e7eb;
+  font-size:14px;
+}
+.form-group input:focus,
+.form-group select:focus{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px rgba(75,123,236,0.08);
+}
+
+/* center button */
+.center{ text-align:center; margin-top:26px; }
+.btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:12px 28px;
+  font-size:16px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease;
+  box-shadow:0 8px 18px rgba(75,123,236,0.18);
+}
+.btn:hover{
+  transform:translateY(-2px);
+  background:var(--accent-dark);
+  box-shadow:0 12px 30px rgba(75,123,236,0.18);
+}
+
+/* result boxes */
+.result{
+  margin-top:28px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:18px 20px;
+  border-radius:10px;
+  font-weight:700;
+  box-shadow:0 6px 18px rgba(10,20,40,0.04);
+}
+.result .result-icon{
+  font-size:22px;
+}
+.result.fit{
+  background: #e8f9f0;
+  color:var(--success);
+}
+.result.not-fit{
+  background:#ffecec;
+  color:var(--danger);
+}
+.result.error{
+  background:#fff4e6;
+  color:#b45309;
+}
+
+/* footer */
+.site-footer{
+  margin-top:34px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  padding-top:18px;
+  border-top:1px solid #f1f5f9;
+}
+
+/* ---------------------- */
+/* Home Page Enhancements */
+/* ---------------------- */
+
+.hero-section {
+  width: 100%;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #4b7bec33, #3867d622);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  background: white;
+  padding: 45px 60px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  text-align: center;
+  max-width: 650px;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  margin: 0 0 10px;
+  color: #1f2937;
+}
+
+.hero-content p {
+  font-size: 17px;
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--accent);
+  color: white;
+  border-radius: 999px;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(75,123,236,0.25);
+  transition: 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(75,123,236,0.35);
+}
+
+/* Footer spacing fix */
+.site-footer {
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+
+/* ======================================================= */
+/* Make Prediction Page Color Theme Match the Home Page     */
+/* ======================================================= */
+
+/* Page background same as hero gradient */
+body {
+  background: linear-gradient(135deg, #4b7bec33, #3867d622) !important;
+}
+
+/* Prediction container same card as hero card */
+.container {
+  background: white !important;
+  border-radius: 18px !important;
+  padding: 40px !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+  border: none !important;
+}
+
+/* Form labels slightly darker */
+.form-group label {
+  color: #1f2937 !important;
+  font-weight: 600;
+}
+
+/* Inputs cleaner */
+.form-group input,
+.form-group select {
+  background: #ffffff;
+  border: 1px solid #e3e6eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: .2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(75,123,236,0.15);
+}
+
+/* Keep the same button theme as home */
+.btn {
+  background: var(--accent) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 999px !important;
+  padding: 12px 30px !important;
+  box-shadow: 0 10px 25px rgba(75,123,236,0.25);
+}
+
+.btn:hover {
+  background: var(--accent-dark) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(75,123,236,0.35);
+}
+
+/* Result Box Theme Updated */
+.result {
+  border-radius: 12px !important;
+  padding: 18px 20px !important;
+  box-shadow: 0 6px 18px rgba(10,20,40,0.04);
+}
+
+.result.fit {
+  background: #e8f9f0 !important;
+  border-left: 6px solid var(--success);
+  color: var(--success);
+}
+
+.result.not-fit {
+  background: #ffecec !important;
+  border-left: 6px solid var(--danger);
+  color: var(--danger);
+}
+
+.result.error {
+  background: #fff4e6 !important;
+  border-left: 6px solid #b45309;
+}
+
+/* Use same footer spacing as home */
+.site-footer {
+  margin-top: 34px !important;
+  padding-top: 20px !important;
+  color: var(--muted) !important;
+}
+
+/* for back button  */
+/* Glow effect */
+.back-link {
+  transition: 0.25s ease;
+}
+
+.back-link:hover {
+  transform: translateX(-4px);
+  background: linear-gradient(90deg, #7c3aed, #d946ef, #fde2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* for label animations  */
+/* Smooth fade + lift animation for labels */
+.form-group:hover label {
+  transform: translateY(-3px);
+  opacity: 1;
+  background: linear-gradient(90deg, #7c3aed, #d946ef, #fde2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

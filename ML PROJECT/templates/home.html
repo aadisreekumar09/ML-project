@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Fitness Classification — Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome</h1>
+      <p>Predict whether a person is Fit or Not Fit using a trained ML model.</p>
+
+      <a href="{{ url_for('predict') }}" class="hero-btn">Start Prediction</a>
+    </div>
+  </div>
+
+  <div class="site-footer">
+    © 2025 Fitness Classification ML System — Built with Flask • Aadi
+  </div>
+
+</body>
+</html>
